@@ -1,5 +1,27 @@
 # Customer Credit Card Service
 
+## Usage
+
+**Install all the dependencies:**
+
+```bash
+$ python2 -m virtualenv env
+$ source env/bin/activate
+$ pip install -r requirements.txt
+```
+
+**Run the application:**
+
+```bash
+$ python2 run.py
+```
+
+**Run tests:**
+
+```bash
+$ pytest -v
+```
+
 ## Register new customer
 
 **Definition**
@@ -13,8 +35,8 @@
 - `"trailing_digits":number` last four digits of credit card
 - `"leading_digits":number` `OPTIONAL` first four digits of credit card
 - `"card_type":string` `OPTIONAL` card issuer name
-- `"start_date":string` `OPTIONAL` issue date of credit card
-- `"end_date":string` `OPTIONAL` expiry date of credit card
+- `"start_date":string` `OPTIONAL` issue date of credit card (MM.YYYY)
+- `"end_date":string` `OPTIONAL` expiry date of credit card (MM.YYYY)
 
 **Response**
 
@@ -49,8 +71,8 @@
 - `"trailing_digits":number` last four digits of credit card
 - `"leading_digits":number` `OPTIONAL` first four digits of credit card
 - `"card_type":string` `OPTIONAL` card issuer name
-- `"start_date":string` `OPTIONAL` issue date of credit card
-- `"end_date":string` `OPTIONAL` expiry date of credit card
+- `"start_date":string` `OPTIONAL` issue date of credit card (MM.YYYY)
+- `"end_date":string` `OPTIONAL` expiry date of credit card (MM.YYYY)
 
 **Response**
 
@@ -59,13 +81,10 @@
 
 ```json
 {
-    "matches": [{
-        "first_name": "richard",
-        "email": "richard.branson@virgin.com"
-    }, {
-        "first_name": "john",
-        "email": "john.smith@gmail.com"
-    }],
+    "matches": {
+        "richard.branson@virgin.com": "richard",
+		"john.smith@gmail.com": "john"
+    },
 	"message": "Possible customers found"
 }
 ```
