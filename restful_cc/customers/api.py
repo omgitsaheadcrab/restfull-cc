@@ -49,18 +49,20 @@ class Customer(Resource):
             if ctype:
                 search = search.filter(or_(Customers.card_type == ctype,
                                             Customers.card_type == None))
+                
         if card_type:
             search = search.filter(or_(Customers.card_type == card_type,
                                        Customers.card_type == None))
             # Use card_type to infer leading_digits
-     
             ldigs = issuer_check(str(card_type))
             if ldigs:
-                search = search.filter(or_(Customers.leading_digits.in_(ldigs),
-                                       Customers.leading_digits == None))       
+                 search = search.filter(or_((Customers.leading_digits.op('/')(100)).in_(ldigs),
+                                       Customers.leading_digits == None))
+                 
         if end_date:
             search = search.filter(or_(Customers.end_date == end_date.strftime("%m.%Y"),
                                        Customers.end_date == None))
+            
         if start_date:
             search = search.filter(or_(Customers.start_date == start_date.strftime("%m.%Y"),
                                        Customers.start_date == None))
