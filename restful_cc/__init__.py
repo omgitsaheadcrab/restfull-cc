@@ -15,8 +15,10 @@ def create_app(config_class=Config):
     app.config.from_object(Config)
 
     # Init db
-    db.init_app(app)
-
+    with app.test_request_context():
+        db.init_app(app)
+        db.create_all()
+    
     # Create API
     api = Api(app)
 

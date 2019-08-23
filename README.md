@@ -24,11 +24,11 @@
 ```json
 {
     "data": {
-        "card_type": null,
+		"card_type": null,
         "email": "john@gmail.com",
-        "end_date": null,
+		"end_date": null,
         "first_name": "john",
-        "leading_digits": null,
+		"leading_digits": null,
         "start_date": "08.2012",
         "trailing_digits": 3456
     },
@@ -36,7 +36,7 @@
 }
 ```
 
-`OPTIONAL` arguments null if not included
+`OPTIONAL` arguments null if not provided
 
 ## Retrieve customer matches
 
