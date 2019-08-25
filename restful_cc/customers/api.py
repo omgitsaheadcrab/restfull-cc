@@ -1,4 +1,3 @@
-from flask import jsonify
 from flask_restful import Resource
 from webargs import fields, validate
 from webargs.flaskparser import use_kwargs, parser, abort
@@ -30,9 +29,9 @@ put_args = {
     "end_date": fields.DateTime(required=False,format='%m.%Y'),
     "start_date": fields.DateTime(required=False,format='%m.%Y')
 }
-    
-class Customer(Resource):
 
+class Customer(Resource):
+    
     @use_kwargs(get_args)
     def get(self,trailing_digits,
             leading_digits=None,card_type=None,end_date=None,start_date=None):

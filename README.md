@@ -2,24 +2,44 @@
 
 ## Usage
 
-**Install all the dependencies:**
+**Install dependencies:**
 
 ```bash
 $ python2 -m virtualenv env
 $ source env/bin/activate
-$ pip install -r requirements.txt
+$ # dependencies for local testing
+$ pip install -r requirements.txt 
+$ # dependencies for dev_appserver
+$ pip install -r requirements.txt -t lib/
 ```
 
-**Run the application:**
+**Prepare storage:**
+
+Either initialise an instance of [cloud_sql_proxy](https://cloud.google.com/sql/docs/mysql/sql-proxy) or create a local database named 'restfulcc'
+
 
 ```bash
-$ python2 run.py
+$ mysql -h 127.0.0.1 -u root -p
+mysql> CREATE DATABASE restfulcc;
+mysql> QUIT;
 ```
 
-**Run tests:**
+**Run the application in GAE dev_appserver:**
 
 ```bash
-$ pytest -v
+$ dev_appserver app.yaml
+```
+
+**Run the application locally:**
+
+```bash
+$ python2 main.py
+```
+
+**Run tests locally:**
+
+```bash
+$ pytest -v main_test.py
 ```
 
 ## Register new customer
