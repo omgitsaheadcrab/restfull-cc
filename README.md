@@ -27,19 +27,19 @@ mysql> QUIT;
 **Run the application in GAE dev_appserver:**
 
 ```bash
-$ dev_appserver app.yaml
+(env) $ dev_appserver app.yaml
 ```
 
 **Run the application locally:**
 
 ```bash
-$ python2 main.py
+(env) $ python2 main.py
 ```
 
 **Run tests locally:**
 
 ```bash
-$ pytest -v main_test.py
+(env) $ pytest -v main_test.py
 ```
 
 ## Register new customer
