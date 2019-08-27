@@ -65,16 +65,16 @@ mysql> QUIT;
 
 ```json
 {
-    "data": {
+	"data": {
 		"card_type": null,
-        "email": "john@gmail.com",
+		"email": "john@gmail.com",
 		"end_date": null,
-        "first_name": "john",
+		"first_name": "john",
 		"leading_digits": null,
-        "start_date": "08.2012",
-        "trailing_digits": 3456
-    },
-    "message": "Customer registered"
+		"start_date": "08.2012",
+		"trailing_digits": 3456
+	},
+	"message": "Customer registered"
 }
 ```
 
@@ -101,10 +101,10 @@ mysql> QUIT;
 
 ```json
 {
-    "matches": {
-        "richard.branson@virgin.com": "richard",
+	"matches": {
+		"richard.branson@virgin.com": "richard",
 		"john.smith@gmail.com": "john"
-    },
+	},
 	"message": "Possible customers found"
 }
 ```
