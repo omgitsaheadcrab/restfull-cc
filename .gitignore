@@ -2,3 +2,4 @@ env/
 *.pyc
 lib/
 cloud_sql_proxy
+c++/main

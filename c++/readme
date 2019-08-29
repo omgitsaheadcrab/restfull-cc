@@ -1,0 +1,4 @@
+# Requires libcurl, cpr
+# compile with:
+
+g++ -o main main.cpp api.cpp -lcpr -lcurl
